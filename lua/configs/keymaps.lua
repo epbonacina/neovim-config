@@ -11,11 +11,11 @@ vim.o.shiftwidth = 4 -- Número de espaços inseridos quando indentando
 
 
 -- Explorador de arquivos
-vim.g.netrw_banner = 0        -- Esconde o banner de ajuda no topo
-vim.g.netrw_liststyle = 3     -- Modo de árvore (Tree view)
-vim.g.netrw_browse_split = 4  -- Abre arquivos na janela anterior
-vim.g.netrw_altv = 1          -- Abre splits verticalmente à direita
-vim.g.netrw_winsize = 25      -- Define a largura da janela como 25%
+vim.g.netrw_banner = 0 -- Esconde o banner de ajuda no topo
+vim.g.netrw_liststyle = 3 -- Modo de árvore (Tree view)
+vim.g.netrw_browse_split = 4 -- Abre arquivos na janela anterior
+vim.g.netrw_altv = 1 -- Abre splits verticalmente à direita
+vim.g.netrw_winsize = 25 -- Define a largura da janela como 25%
 vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { silent = true })
 
 
@@ -67,9 +67,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Formatação
 local lsps = require("configs.lsps")
 vim.keymap.set("n", "<leader>fmt", lsps.format_current_buffer) -- Formata o arquivo atual
--- Formata o arquivo atual quando o usuário tentar salválo com `:w`
+-- Formata o arquivo atual quando o usuário tentar salvá-lo com `:w`
 vim.api.nvim_create_autocmd("BufWritePre", {callback = lsps.format_current_buffer})
 
 
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
+
+
+-- Comentários
+vim.keymap.set("n", "<leader>/", "gcc", { remap=true })
+vim.keymap.set("v", "<leader>/", "gc", { remap=true })
