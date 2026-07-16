@@ -16,9 +16,9 @@ M.servers = {
         formatter = "black",
     },
     {
-        name = "tsserver",
-        cmd = {"typescript-language-server", "--stdio"},
-        expects = {"package.json"},
+        name = "tsc",
+        cmd = {"tsc", "--lsp", "--stdio"},
+        expects = nil,
         filetypes = {"javascript", "typescript"},
         formatter = "prettier --write",
     },
