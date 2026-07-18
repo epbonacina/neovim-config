@@ -78,3 +78,7 @@ vim.opt.clipboard = "unnamedplus"
 -- Comentários
 vim.keymap.set("n", "<leader>/", "gcc", { remap=true })
 vim.keymap.set("v", "<leader>/", "gc", { remap=true })
+
+
+-- Realce de sintaxe
+vim.keymap.set("n", "<leader>h", vim.treesitter.start)
