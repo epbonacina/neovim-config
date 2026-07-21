@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local lsps = require("configs.lsps")
 vim.keymap.set("n", "<leader>fmt", lsps.format_current_buffer) -- Formata o arquivo atual
 -- Formata o arquivo atual quando o usuário tentar salvá-lo com `:w`
-vim.api.nvim_create_autocmd("BufWritePre", {callback = lsps.format_current_buffer})
+vim.api.nvim_create_autocmd("BufWritePost", {callback = lsps.format_current_buffer})
 
 
 -- Clipboard

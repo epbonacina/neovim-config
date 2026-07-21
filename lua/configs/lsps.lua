@@ -61,6 +61,13 @@ M.servers = {
             },
         },
     },
+    {
+        name = "hls",
+        cmd = {"haskell-language-server-wrapper", "--lsp"},
+        expects = nil,
+        filetypes = {"haskell"},
+        formatter = "ormolu -i",
+    },
 }
 
 
