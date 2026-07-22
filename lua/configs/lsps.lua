@@ -135,6 +135,7 @@ M.format_current_buffer = function()
 
     if not server or not server.formatter then
         print("No formatter found for filetype '" .. ft .. "'.")
+        return
     end
 
     -- Executa o comando no arquivo atual
