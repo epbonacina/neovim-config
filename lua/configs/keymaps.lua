@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { silent = true })
 -- Procura de arquivos por nome
 vim.opt.path:append("**") -- Passa a buscar em todas as subpastas recursivamente
 vim.opt.wildmenu = true -- Apertar Tab durante a busca abre um menu flutuante
+vim.opt.wildignorecase = true -- Faz a busca não diferenciar letras maiúsculas de minúsculas
 vim.opt.wildmode = "longest:full,full" -- A maneira como o menu flutuante é apresentado
 vim.keymap.set("n", "<leader>p", ":find ") -- Busca por nome de arquivo
 
@@ -34,7 +35,7 @@ vim.keymap.set("n", "<leader>f", function()
     end
 
     -- Executa o grep silenciosamente e abre a lista de resultados em uma Location List
-    vim.cmd("silent lgrep! " .. vim.fn.escape(target, " "))
+    vim.cmd("silent lgrep! -i " .. vim.fn.escape(target, " "))
     vim.cmd("lopen")
 end)
 
