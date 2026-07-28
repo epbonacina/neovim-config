@@ -13,13 +13,13 @@ vim.o.shiftwidth = 4 -- Número de espaços inseridos quando indentando
 -- Explorador de arquivos
 vim.g.netrw_banner = 0 -- Esconde o banner de ajuda no topo
 vim.g.netrw_liststyle = 3 -- Modo de árvore (Tree view)
-vim.g.netrw_browse_split = 4 -- Abre arquivos na janela anterior
+vim.g.netrw_browse_split = 0 -- Abre arquivos na janela do próprio explorador de arquivos
 vim.g.netrw_altv = 1 -- Abre splits verticalmente à direita
 vim.g.netrw_winsize = 25 -- Define a largura da janela como 25%
 vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { silent = true })
 
 
--- Procura de arquivos por nome
+-- Busca de arquivos por nome
 vim.opt.path:append("**") -- Passa a buscar em todas as subpastas recursivamente
 vim.opt.wildmenu = true -- Apertar Tab durante a busca abre um menu flutuante
 vim.opt.wildignorecase = true -- Faz a busca não diferenciar letras maiúsculas de minúsculas
@@ -27,7 +27,7 @@ vim.opt.wildmode = "longest:full,full" -- A maneira como o menu flutuante é apr
 vim.keymap.set("n", "<leader>p", ":find ") -- Busca por nome de arquivo
 
 
--- Procura de arquivos por conteúdo
+-- Busca de arquivos por conteúdo
 vim.keymap.set("n", "<leader>f", function()
     local target = vim.fn.input("Content to search for: ")
     if target == "" then
