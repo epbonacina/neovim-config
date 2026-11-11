@@ -15,9 +15,9 @@ M.servers = {
     },
     {
         name = "tsc",
-        cmd = {"tsc", "--lsp", "--stdio"},
+        cmd = {"deno", "lsp"},
         filetypes = {"javascript", "typescript"},
-        formatter = "prettier --write",
+        formatter = "deno fmt",
     },
     {
         name = "svelte",
